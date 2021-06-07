@@ -1,6 +1,6 @@
 
 <?php
-include('../config/const.php');
+include("../config/config.php");
 ?>
 
 <!DOCTYPE html>

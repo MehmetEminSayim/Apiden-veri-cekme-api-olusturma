@@ -2,12 +2,7 @@
 define('PATH',"http://localhost/api_odev/");
 session_start();
 
+require_once ('PDOClass.php');
 
-define('LOCALHOST','localhost');
-define('DB_kullaniciadi','root');
-define('DB_sifre','root');
-define('DB_tabloismi','api_odev');
-
-$conn = mysqli_connect(LOCALHOST, DB_kullaniciadi, DB_sifre) or die(mysqli_error());
-$db_select = mysqli_select_db($conn, DB_tabloismi) or die(mysqli_error());
-
+$pdo = new PDO('mysql:dbname=api_odev;host=localhost', 'root', 'root');
+$db = new PDODb($pdo);
