@@ -12,34 +12,35 @@ if (isset($_GET['config'])){
             });
         </script>
     <?php   }
+
+    if ($_GET['config'] == "false"){ ?>
+        <script>
+            swal("Ayarlar Güncellenemedi").then((res)=>{
+                window.location = "genel_ayarlar.php"
+            });
+        </script>
+    <?php   }
 }
 
-if(isset($_POST['submit']))
-{
-    $site_adi = $_POST["site_adi"];
-    $site_url = $_POST["site_url"];
-    $meta_desc= $_POST["meta_desc"];
-    $meta_key= $_POST["meta_key"];
-
-    $sql = "UPDATE genel_ayarlar SET
-                site_adi='$site_adi',
-                site_url='$site_url',
-                meta_desc='$meta_desc',
-                meta_key='$meta_key'
-                ";
-
-    $res = mysqli_query($conn, $sql);
-
-    if($res==true)
-    {
-        header('location:genel_ayarlar.php?config=true');
-    }
+if ($_POST){
+    $dataset = [
+        "site_name" => $_POST['site_name'],
+        "site_url" => $_POST['site_url'],
+        "api_key" => $_POST['api_key'],
+        "api_token" => $_POST['api_token'],
+        "meta_desc" => $_POST['meta_desc'],
+        "meta_keys" => $_POST['meta_keys'],
+    ];
+    $db->where('id', 1);
+    $resupt =  $db->update('settings', $dataset);
+    if ($resupt)
+        header("location:genel_ayarlar.php?config=true");
     else
-    {
-        header('location:genel_ayarlar.php?config=false');
-    }
+        header("location:genel_ayarlar.php?config=false");
+
 
 }
+
 ?>
 
 <div class="container-scroller">
@@ -49,12 +50,6 @@ if(isset($_POST['submit']))
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
         <?php include_once "parcalar/menu.php"?>
-        <?php
-
-            $sqlConf = "SELECT * FROM genel_ayarlar WHERE id='1'";
-            $resConf = mysqli_query($conn, $sqlConf);
-            $rowConf = mysqli_fetch_assoc($resConf);
-        ?>
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
@@ -64,6 +59,10 @@ if(isset($_POST['submit']))
                             <div class="col-md-12 grid-margin">
                                 <div class="card">
                                     <div class="card-body">
+                                        <?php
+                                            $db->where("id", "1");
+                                            $set = $db->getOne("settings");
+                                        ?>
                                         <div class="d-flex justify-content-between">
                                             <h4 class="card-title mb-5">Genel Ayarlar</h4>
                                         </div>
@@ -72,7 +71,7 @@ if(isset($_POST['submit']))
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="exampleInputName1">Site Adı</label>
-                                                        <input type="text" name="site_adi" class="form-control" value="<?php echo $rowConf['site_adi'] ?>" >
+                                                        <input type="text" name="site_name" class="form-control" value="<?php echo $set['site_name'] ?>" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
@@ -80,7 +79,22 @@ if(isset($_POST['submit']))
                                                         <label for="exampleInputName1">Site Url <small style="color: red">sonuna / işareti zorunlu
                                                                 paramatredir</small></label>
                                                         <input type="text" name="site_url" class="form-control" value="<?php echo
-                                                        $rowConf['site_url'] ?>" >
+                                                        $set['site_url'] ?>" >
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">Api Key </label>
+                                                        <input type="text" name="api_key" class="form-control" value="<?php echo $set['api_key'] ?>" >
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName1">Api Token</label>
+                                                        <input type="text" name="api_token" class="form-control" value="<?php echo $set['api_token'] ?>" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -89,13 +103,14 @@ if(isset($_POST['submit']))
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="exampleInputName1">Meta Açıklama</label>
-                                                        <input type="text" name="meta_desc" class="form-control" value="<?php echo $rowConf['meta_desc'] ?>" >
+                                                        <input type="text" name="meta_desc" class="form-control" value="<?php echo $set['meta_desc'] ?>" >
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="exampleInputName1">Meta Anahtar Kelimeler</label>
-                                                        <input type="text" name="meta_key" class="form-control" value="<?php echo $rowConf['meta_key'] ?>" >
+                                                        <input type="text" name="meta_keys" class="form-control" value="<?php echo $set['meta_keys']
+                                                        ?>" >
                                                     </div>
                                                 </div>
                                             </div>

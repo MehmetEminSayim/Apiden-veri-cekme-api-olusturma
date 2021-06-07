@@ -1,4 +1,8 @@
-<?php include_once("config/config.php")  ?>
+<?php include_once("config/config.php");
+$db->where("id", 1);
+$set = $db->getOne("settings");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +14,9 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
     <title>Coin Döviz Paylaşım Platformu</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content="<?php echo $set['meta_keys'] ?>">
+    <meta name="description" content="<?php echo $set['meta_desc'] ?>">
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="<?php echo PATH; ?>css/bootstrap.min.css">
     <!-- style css -->

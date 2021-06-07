@@ -1,6 +1,6 @@
 <!-- loader  -->
 <div class="loader_bg">
-    <div class="loader"><img src="../images/loading.gif" alt="" /></div>
+    <div class="loader"><img src="images/loading.gif" alt="" /></div>
 </div>
 <!-- end loader -->
 <div id="mySidepanel" class="sidepanel">
@@ -37,7 +37,7 @@
                         <li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                         <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
                         <li>
-                            <button class="openbtn" onclick="openNav()"><img src="../images/menu_btn.png"></button>
+                            <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button>
                         </li>
                     </ul>
                 </div>

@@ -63,7 +63,6 @@
 
     for ($i = 0; $i <count($resultGold['result']); $i++) {
         if ($i == 5){
-            $insertControl = 1;
             break;
         }else{
             $db->where("name", $resultGold['result'][$i]['name']);
