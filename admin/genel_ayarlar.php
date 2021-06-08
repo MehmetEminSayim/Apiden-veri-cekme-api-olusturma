@@ -87,7 +87,7 @@ if ($_POST){
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="exampleInputName1">Api Key </label>
+                                                        <label for="exampleInputName1">Api Key  </label>
                                                         <input type="text" name="api_key" class="form-control" value="<?php echo $set['api_key'] ?>" >
                                                     </div>
                                                 </div>

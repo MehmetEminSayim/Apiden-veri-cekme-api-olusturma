@@ -16,6 +16,13 @@
         <li class="nav-item nav-category">Menüler</li>
 
         <li class="nav-item">
+            <a class="nav-link" href="index.php">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Anasayfa</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" href="api_manager.php">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Api Yönetimi</span>

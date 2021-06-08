@@ -1,3 +1,9 @@
+<?php
+    $db->where("id", 1);
+    $set = $db->getOne("settings");
+?>
+
+
 <!-- loader  -->
 <div class="loader_bg">
     <div class="loader"><img src="images/loading.gif" alt="" /></div>
@@ -5,12 +11,9 @@
 <!-- end loader -->
 <div id="mySidepanel" class="sidepanel">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a class="active" href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="searvices.html">Searvices</a>
-    <a href="testimonial.html">Testimonial</a>
-    <a href="works.html">Works</a>
-    <a href="contact.html">Contact</a>
+    <a class="active" href="index.php">Anasayfa</a>
+    <a href="about.php">Hakkımızda</a>
+    <a href="contact.php">İletişim</a>
 </div>
 <!-- header -->
 <header>
@@ -20,7 +23,7 @@
             <div class="row d_flex">
                 <div class="col-sm-5">
                     <div class="logo">
-                        <a href="index.html">Bitcoin Platformu</a>
+                        <a href="index.php"><?php echo $set['site_name'] ?></a>
                     </div>
                 </div>
                 <?php $item = $db->get('gold_list');   ?>
