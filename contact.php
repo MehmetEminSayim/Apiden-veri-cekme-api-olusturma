@@ -2,39 +2,28 @@
 <body class="main-layout">
 <?php include_once("partials/navbar.php") ?>
 
-<!-- end header -->
-<div class="contact">
+<div id="about" class="about">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="titlepage text_align_center">
-                    <h2>Contact Us</h2>
-                </div>
-            </div>
-            <div class=" col-md-10 offset-md-1">
-                <form id="request" class="main_form">
+                <div class="about_border">
                     <div class="row">
-                        <div class="col-md-6 ">
-                            <input class="contactus" placeholder="Full Name" type="type" name="Full Name">
-                        </div>
                         <div class="col-md-6">
-                            <input class="contactus" placeholder="Email" type="type" name="Email">
-                        </div>
-                        <div class="col-md-6">
-                            <input class="contactus" placeholder="Phone number" type="type" name="Phone number">
-                        </div>
-                        <div class="col-md-6">
-                            <textarea class="textarea" placeholder="Message" type="type" Message="Name"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <button class="send_btn">Send</button>
+                            <div class="titlepage text_align_left">
+                                <h2>Kripto Para Nedir?</h2>
+                            </div>
+                            <div class="about_text">
+                                <p>
+                                    Kripto para, takas işlemlerinde kullanılabilen, tamamen dijital, şifrelenmiş, sanal para birimi. Kimilerine göreyse geleceğin para birimi.
+
+                                    Günümüzde kripto para birimleri pek çok kişi tarafından duyulmuş, devlet başkanlarından dev şirketlere kadar herkesin çok fazla dikkatini çekmiş durumda olan bilinmeyeni çok olan bir olgudur. Takas işlemlerini doğrulamak ve güvenli şekilde gerçekleştirmek için kriptografi kullanılır. Herhangi bir fiziksel karşılığa sahip değildir.
+
+                                    Aslen banka kartları ve kredi kartlar ile harcanılan ve aktarılan paralar da sanal paralardır, çünkü bu işlemler sonucunda sadece sistem verilerinde değişiklik meydana gelir. Kripto paralar da aynı mantıkta çalışma prensibine sahip. Ancak herhangi bir otorite ya da hükümet tarafından yönetilmeyen, yani merkezileştirilmemiş (decentralized) bir sistem mevcut, bu da sistemin daha güvenli olmasını sağlıyor.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
