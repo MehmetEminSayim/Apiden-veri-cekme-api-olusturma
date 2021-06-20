@@ -70,7 +70,7 @@
             <!-- partial:partials/_footer.html -->
             <footer class="footer">
                 <div class="container-fluid clearfix">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Betül Odabaş Api Yönetim Paneli </span>
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Api Yönetim Paneli </span>
                 </div>
             </footer>
             <!-- partial -->
