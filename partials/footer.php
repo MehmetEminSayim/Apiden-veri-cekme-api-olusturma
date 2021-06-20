@@ -3,7 +3,7 @@
         <div class="container ">
             <div class="row ">
                 <div class="col-md-12 ">
-                    <p>© 2021 Tüm Hakları Saklıdır. Design by   <a href="#"> Betül</a></p>
+                    <p>© 2021 Tüm Hakları Saklıdır. Design by   <a href="#"> Metge Yazılım</a></p>
                 </div>
             </div>
         </div>
