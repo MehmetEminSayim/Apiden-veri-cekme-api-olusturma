@@ -10,7 +10,7 @@
 
 
         $headers = array();
-        $headers[] = 'Authorization: apikey 1zFTFxmKkmEGs53VBynX2x:6eoG4Y3fB6nBdNvFRHsp5Z';
+        $headers[] = 'Authorization: apikey yourapikey';
         $headers[] = 'Content-Type: application/json';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
